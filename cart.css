@@ -1,0 +1,171 @@
+/* Gaya Umum */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f5;
+    color: #4d4d4d;
+  }
+  
+  header {
+    background-color: #ffc1cc;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .logo span{
+    color: #cc3366;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section Keranjang */
+  .cart {
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffe4ec;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart .heading {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: #d63384;
+  }
+  
+  .cart .heading span {
+    color: #ff69b4;
+  }
+  
+  .cart-container {
+    margin-bottom: 20px;
+  }
+  
+  /* Item dalam keranjang */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 5px solid #ffb6c1;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+  }
+  
+  .cart-item-info h4 {
+    margin: 0;
+    color: #cc3366;
+  }
+  
+  .cart-item-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #cc3366;
+  }
+  
+  /* Tombol Aksi */
+  .cart-item-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .update-btn,
+  .remove-btn {
+    background-color: #f78fb3;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .update-btn[data-action="increase"] {
+    background-color: #ff99aa;
+  }
+  
+  .update-btn:hover,
+  .remove-btn:hover {
+    background-color: #fa709a;
+  }
+  
+  /* Total Harga */
+  .total {
+    text-align: right;
+    font-size: 1.2em;
+    color: #d63384;
+    margin-top: 20px;
+  }
+  
+  .checkout-btn {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #ff85a2;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #f66b8d;
+  }
+  
+  /* Responsif untuk HP */
+  @media (max-width: 600px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cart-item-info,
+    .cart-item-price,
+    .cart-item-buttons {
+      width: 100%;
+      text-align: left;
+    }
+  
+    .cart-item-buttons {
+      justify-content: flex-start;
+    }
+  
+    .total {
+      text-align: center;
+    }
+  
+    .checkout-btn {
+      width: 100%;
+      color: #ff99aa;
+    }
+  }
+  
