@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja</title>
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Vinaa'Beads shop<span>.</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href=" https://wa.me/message/5K6TIUXC3RLBF1" target="_blank">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cart">
+    <h2 class="heading">Keranjang <span>Belanja</span></h2>
+    <div id="cart-container" class="cart-container"></div>
+    <div class="total">
+      <h3>Total: Rp <span id="total-price">0</span></h3>
+    </div>
+    <button id="checkout-btn">Checkout</button>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cartContainer = document.getElementById('cart-container');
+      const totalPriceElement = document.getElementById('total-price');
+      const checkoutBtn = document.getElementById('checkout-btn');
+
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      let total = 0;
+
+      // Function to update the cart in localStorage and the UI
+      function updateCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        cartContainer.innerHTML = ''; // Clear current cart items
+        total = 0;
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML = "<p>Keranjang kamu kosong.</p>";
+        } else {
+          cart.forEach((item, index) => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <p>Jumlah: ${item.quantity}</p>
+            </div>
+            <div class="cart-item-price">Rp ${item.price * item.quantity}</div>
+            <button class="update-btn" data-index="${index}" data-action="decrease">-</button>
+            <button class="update-btn" data-index="${index}" data-action="increase">+</button>
+            <button class="remove-btn" data-index="${index}">Hapus</button>
+          `;
+            cartContainer.appendChild(itemElement);
+            total += item.price * item.quantity;
+          });
+        }
+
+        totalPriceElement.innerText = total;
+      }
+
+      // Panggil fungsi saat halaman dimuat
+      updateCart();
+
+      // Handle button clicks for update and remove
+      cartContainer.addEventListener('click', function (e) {
+        const index = e.target.getAttribute('data-index');
+        const action = e.target.getAttribute('data-action');
+
+        if (e.target.classList.contains('remove-btn')) {
+          cart.splice(index, 1);
+        } else if (e.target.classList.contains('update-btn')) {
+          const item = cart[index];
+          if (action === 'increase') {
+            item.quantity++;
+          } else if (action === 'decrease' && item.quantity > 1) {
+            item.quantity--;
+          }
+        }
+        updateCart();
+      });
+
+      // Checkout button
+      checkoutBtn.addEventListener('click', function () {
+        if (cart.length === 0) {
+          alert('Keranjang belanja kamu kosong.');
+          return;
+        }
+
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn === 'true') {
+          window.location.href = 'checkout.html';
+        } else {
+          localStorage.setItem("redirectAfterLogin", "checkout.html");
+          alert('Silakan login terlebih dahulu.');
+          window.location.href ="login.html"; // perbaiki huruf besar "Window"
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

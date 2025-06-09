@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="css/registrasi.css" />
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+        <a href="#" class="logo">Vinaa'Beads shop<span>.</span></a>
+        </div>
+      </header>
+
+  <div class="registration-form">
+    <h2>Register</h2>
+    <form id="regForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <input type="submit" value="Register" />
+    </form>
+    <p id="message"></p>
+    <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+  </div>
+
+  <script>
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const message = document.getElementById('message');
+
+      if (password !== confirmPassword) {
+        message.textContent = "Password tidak sama!";
+        message.style.color = "red";
+      } else {
+        // Simpan email & password
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+
+        message.textContent = "Registrasi berhasil!";
+        message.style.color = "green";
+
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+      }
+    });
+  </script>
+</body>
+</html>

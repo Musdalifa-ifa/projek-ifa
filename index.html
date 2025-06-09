@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vin'shoop</title>
+
+    <!-- font awesome cdm link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!--custom css file link-->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!--heander section starts-->
+
+    <header>
+        <input type="checkbox" id="toggler" />
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Vinaa'Beads shop<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">Rumah</a>
+            <a href="#about">Tentang</a>
+            <a href="#products">Produk</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="cart.html" class="fas fa-shopping-cart">
+                <span class="cart-count" id="cart-count">0</span></a>
+            <a href="login.html" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <!--heander section ends-->
+
+    <!--home section starts-->
+
+    <section class="home" id="home">
+        <div class="content" data-aos="fade-up" data-aos-duration="1400">
+            <h3>vina'shoop</h3>
+            <span>Berbagai Kerajinan Tangan dari Manik-Manik</span>
+            <p>
+                Kami Melayani Pembuatan Gantungan Kunci dan Strap HP Custom serta
+                Aksesoris Seperti Gelang, Kalung, dan Cincin Dari Manik-Manik .
+            </p>
+            <a href="#products" class="btn">Belanja Sekarang</a>
+        </div>
+    </section>
+
+    <!--home section ends-->
+
+    <!--about section starts-->
+
+    <section class="about" id="about">
+        <h1 class="heading"><span> Tentang </span> Kami</h1>
+        <div class="raw" data-aos="fade" data-aos-duration="1800">
+            <div class="video-container">
+                <video src="video-vid.mp4" loop autoplay muted></video>
+                <h3>Toko kerajinan manik-manik lucu dan unik</h3>
+            </div>
+
+            <div class="content" data-aos="slide-left" data-aos-duration="1800">
+                <h3>Mengapa harus memilih kami?</h3>
+                <p>
+                    Dengan berbelanja di Website ini anda dapat membantu usaha UMKM
+                    kecil seperti kami
+                </p>
+                <p>
+                    Semua karya yang kami buat 100% buatan tangan dan menggunakan
+                    manik-manik berkualitas
+                </p>
+                <a href="#contact" class="btn">Pelajari lebih lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!--about section ends-->
+
+    <!--icons section starts-->
+
+    <section class="icons-container">
+        <div class="icons">
+            <img src="images/icons1.png" alt="" />
+            <div class="info">
+                <h3>Pengiriman gratis</h3>
+                <span>buat daerah kap.sinjai</span>
+            </div>
+        </div>
+        <div class="icons">
+            <img src="images/icons2.png" alt="" />
+            <div class="info">
+                <h3>Jaminan uwang kembali</h3>
+                <span>Jika pesanan tidak sesuai </span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="images/icons3.png" alt="" />
+            <div class="info">
+                <h3>Hadiah menarik</h3>
+                <span>Bagi yang sudah berlanganan</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="images/icons.4.jpg" alt="" />
+            <div class="info">
+                <h3>pembayaran aman dan bisa COD</h3>
+                <span>COD berlaku buat daerah Kap.Sinjai </span>
+            </div>
+        </div>
+    </section>
+
+    <!--icons section ends-->
+
+    <!--products section starts-->
+
+    <section class="products" id="products">
+        <h1 class="heading">Produk <span>kami</span></h1>
+        <div class="box-container">
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-10%</span>
+                <div class="images">
+                    <img src="images/img1.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event,'Gantungan hp/Stap Phone',18000 )">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img1.jpg',
+                            'Gantungan hp/Stap Phone',
+                            18000,
+                            20000,
+                            'Strap Henphoon handmade yang dibuat dari manik-manik pilihan dengan warna-warna ceria. Cocok digunakan sebagai gantungan HP, pouch, atau tas kecil.Tampilannya unik dan lucu, sangat cocok untuk anak muda yang ingin tampil beda dan estetik! Strap ini juga cocok dijadikan sebagai hadiah untuk teman, sahabat, atau orang tersayang.',
+                            () => addToCart(event, 'Gantungan hp/Stap Phone', 18000)
+                           )">
+                        </a>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gantungan hp/Stap Phone</h3>
+                    <div class="price">Rp.18.000 <span>Rp20.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-15%</span>
+                <div class="images">
+                    <img src="images/img2.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Gelang kristal Bunga Matahati',25000)">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img2.jpg',
+                            'Gelang kristal Bunga Matahati',
+                            25000,
+                            30000,
+                            'Gelang manik-manik kristal yang dihiasi dengan charm bunga matahari yang lucu. Dengan warna-warna pastel yang ceria, gelang ini cocok dipakai untuk tampil lebih manis dan fashionable.',
+                            () => addToCart(event, 'Gelang kristal Bunga Matahati', 25000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gelang kristal Bunga Matahati</h3>
+                    <div class="price">Rp.25.000 <span>Rp.30.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-5%</span>
+                <div class="images">
+                    <img src="images/img3.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Gelang manik-manik Mutiara',23000)">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img3.jpg',
+                            'Gelang manik-manik Mutiara',
+                            23000,
+                            25000,
+                            'Gelang manik-manik elegan dengan sentuhan mutiara kecil yang manis dan berkilau. Desain simple namun anggun, cocok untuk dipakai harian atau acara spesial ✨ Mudah dipadukan dengan gaya apa pun, membuat penampilanmu lebih feminin dan stylish..',
+                            () => addToCart(event, 'Gelang manik-manik Mutiara', 23000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gelang manik-manik Mutiara</h3>
+                    <div class="price">Rp.23.000 <span>Rp.25.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-20%</span>
+                <div class="images">
+                    <img src="images/img4..jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Gantungan Hanphone Bunga',18000  )">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img4..jpg',
+                            'Gantungan Hanphone Bunga',
+                            18000,
+                            20000,
+                            '> Gantungan HP Bunga Handmade. Gantungan lucu dengan hiasan bunga kecil warna-warni 🌼 Cocok untuk menghias HP agar terlihat lebih estetik dan unik! Dibuat dengan tangan secara teliti, cocok untuk anak-anak hingga remaja yang suka gaya cute dan ceria..',
+                            () => addToCart(event, 'Gantungan Hanphone Bunga', 18000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gantungan Hanphone Bunga</h3>
+                    <div class="price">Rp.18.000 <span>Rp.20.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-19%</span>
+                <div class="images">
+                    <img src="images/img5.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Gelang Tali Serut',24000  )">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img5.jpg',
+                            'Gelang Tali Serut',
+                            24000,
+                            30000,
+                            '> Gelang Handmade Tali Serut Estetik. Gelang handmade dengan model tali serut yang fleksibel dan nyaman dipakai. Dilengkapi dengan manik-manik lucu dan warna pastel yang cocok untuk anak muda yang suka tampil simpel namun tetap modis.',
+                            () => addToCart(event, 'Gelang Tali Serut', 24000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gelang Tali Serut</h3>
+                    <div class="price">Rp.24.000<span>Rp.30,000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-3%</span>
+                <div class="images">
+                    <img src="images/img6.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn"
+                            onclick="addToCart(event, 'Gantungan Hp Mutiara Kerang Love Pita Kupu',33900  )">Tambahkan ke keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img6.jpg',
+                            'Gantungan Hp Mutiara Kerang Love Pita Kupu',
+                            33000,
+                            35000,
+                            '> Aksesoris HP Cantik & Mewah dengan Sentuhan Mutiara. Gantungan HP eksklusif dengan detail mutiara putih, kerang berbentuk hati, dan aksen pita kupu-kupu. Menambah kesan elegan dan feminim untuk tampilan HP kamu..',
+                            () => addToCart(event, 'Gantungan Hp Mutiara Kerang Love Pita Kupu', 33000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gantungan Hp Mutiara Kerang Love Pita Kupu</h3>
+                    <div class="price">Rp.33.900 <span>Rp.35.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="discount">-18%</span>
+                <div class="images">
+                    <img src="images/img7.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart" onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Cincin manik-manik',12300 )">Tambahkan
+                            ke keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img7.jpg',
+                            'Cincin manik-manik',
+                            12000,
+                            15000,
+                            '> Aksesoris lucu yang cocok untuk anak-anak dan remaja! Cincin dari manik-manik warna-warni ini dibuat secara handmade, memiliki berbagai desain bunga, hati, dan karakter lucu. Cocok untuk hadiah ulang tahun, isi goodie bag, atau koleksi pribadi..',
+                            () => addToCart(event, 'Cincin manik-manik', 12000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Cincin manik-manik</h3>
+                    <div class="price">Rp.12.300<span>Rp.15.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="1800">
+                <span class="discount">-10%</span>
+                <div class="images">
+                    <img src="images/img8.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Gelang mutiara Manik Pita Kupu-kupu',4400 )">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img8.jpg',
+                            '🦋 Gelang Mutiara Manik Pita Kupu-Kupu - Aksesoris Lucu & Elegan > Perpaduan antara manik-manik dan pita kupu-kupu yang cantik, membuat tampilan semakin manis dan estetik. Cocok untuk anak-anak, remaja, hingga hadiah teman spesial.',
+                            18000,
+                            20000,
+                            'Strap henphoon handmade lucu cocok untuk anak muda.',
+                            () => addToCart(event, 'Gelang mutiara Manik Pita Kupu-kupu', 18000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Gelang mutiara Manik Pita Kupu-kupu</h3>
+                    <div class="price">Rp.18.000 <span>Rp.20.000</span></div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-duration="800">
+                <span class="discount">-5%</span>
+                <div class="images">
+                    <img src="images/img9.jpg" alt="" class="product-images" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"onclick="event.preventDefault();"></a>
+                        <a href="#" class="cart-btn" onclick="addToCart(event, 'Strap Phone Gantungan Hp Cinamoroll Sanrio',33000 )">Tambahkan ke
+                            keranjang</a>
+                        <a href="#" class="fas fa-eye" onclick="event.preventDefault(); showProductDetail(
+                            'images/img9.jpg',
+                            'Strap Phone Gantungan Hp Cinamoroll Sanrio',
+                            33000,
+                            35000,
+                            '> Aksesori HP karakter Cinnamoroll dari Sanrio yang super lucu dan estetik! Cocok untuk kamu pecinta karakter Jepang yang ingin tampil beda dan gemesin!.',
+                            () => addToCart(event, 'Strap Phone Gantungan Hp Cinamoroll Sanrio', 33000)
+                           )">
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Strap Phone Gantungan Hp Cinamoroll Sanrio</h3>
+                    <div class="price">Rp.33.000 <span>Rp.35.000</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--prodcuts section ends-->
+
+    <!--detail Produk pop-up-->
+    <!-- Popup Detail Produk -->
+    <div id="product-detail-popup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img id="popup-image" src="" alt="Product Image" />
+            <div class="popup-info">
+                <div class="text">
+                    <h2 id="popup-title">Judul Produk</h2>
+                    <p id="popup-price">Rp. 0</p>
+                    <p><del id="popup-original-price">Rp. 0</del></p>
+                    <p id="popup-description">Deskripsi produk...</p>
+                    <button class="cart-btn" id="popup-cart-btn">Tambahkan ke keranjang</button>
+                </div>
+            </div>
+              
+        </div>
+    </div>
+
+    <!--contact section starts-->
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>Hubungi</span> kami</h1>
+
+        <div class="row" data-aos="fade-down" data-aos-duration="1500">
+            <form action="">
+                <input type="text" placeholder="nama" class="box" />
+                <input type="email" placeholder="email" class="box" />
+                <input type="number" placeholder="Nomor wa" class="box" />
+                <textarea name="" class="box" placeholder="messenge" id="" cols="30" rows="10">
+          </textarea>
+                <input type="submit" value="Kirim pesan" class="btn" />
+            </form>
+
+            <div class="image">
+                <img src="images/contact.jpg.png" alt="" />
+            </div>
+        </div>
+    </section>
+
+    <!--contact section ends-->
+
+    <!--footer section starts-->
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Tautan cepat</h3>
+                <a href="#">home</a>
+                <a href="#">About</a>
+                <a href="#">Produkcts</a>
+                <a href="#">Review</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#">my account</a>
+                <a href="#">my order</a>
+                <a href="#">my favorite</a>
+            </div>
+
+            <div class="box">
+                <h3>Lokasi</h3>
+                <a href="#">Sinjai Utara</a>
+                <a href="#">sinjai timur</a>
+                <a href="#">Sinjai tengah</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#">+62 856-5739-4106</a>
+                <a href="#">vina_viantika007@gemail.com</a>
+                <a href="#">bongki,sinjai utara</a>
+            </div>
+        </div>
+
+        <div class="credit">
+            created by <span>Musdalifah. web designer</span>| all rights reservid
+        </div>
+    </section>
+
+    <!--footer section ends-->
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Smooth Scroll navbar
+        document.querySelectorAll("header .navbar a").forEach((link) => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 60,
+                        behavior: "smooth",
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        function closeModal() {
+            document.getElementById("productModal").style.display = "none";
+        }
+
+        function openModal() {
+            document.getElementById("productModal").style.display = "flex";
+        }
+
+        //Trigger klik ikon mata
+        document.querySelectorAll(".fa-aye").forEach((icon) => {
+            icon.addEventListener("click", function (e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+    </script>
+    <script>
+        // Cek apakah user sudah login
+        if (!localStorage.getItem("isLoggedIn")) {
+            alert("Silakan login terlebih dahulu.");
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <button onclick="logout()">Logout</button>
+    <script>
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            alert("Anda telah logout");
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

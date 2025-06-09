@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Vinaa'Beads shop<span>.</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="checkout">
+    <h2 class="heading">Checkout</h2>
+    <div id="checkout-container" class="checkout-container"></div>
+    <div class="total">
+      <h3>Total: Rp <span id="total-price">0</span></h3>
+    </div>
+    <button id="confirm-btn">Konfirmasi Pembayaran</button>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkoutContainer = document.getElementById('checkout-container');
+      const totalPriceElement = document.getElementById('total-price');
+      const confirmBtn = document.getElementById('confirm-btn');
+
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let total = 0;
+
+      // Function to display cart items in checkout
+      function displayCheckout() {
+        checkoutContainer.innerHTML = '';
+        total = 0;
+
+        if (cart.length === 0) {
+          checkoutContainer.innerHTML = "<p>Keranjang kamu kosong.</p>";
+        } else {
+          cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('checkout-item');
+            itemElement.innerHTML = `
+              <h4>${item.name}</h4>
+              <p>Jumlah: ${item.quantity}</p>
+              <p>Harga: Rp ${item.price * item.quantity}</p>
+            `;
+            checkoutContainer.appendChild(itemElement);
+            total += item.price * item.quantity;
+          });
+        }
+
+        totalPriceElement.innerText = total;
+      }
+
+      // Confirm payment button
+      confirmBtn.addEventListener('click', function () {
+        if (cart.length > 0) {
+          alert('Pembayaran berhasil! Terima kasih telah berbelanja.');
+          localStorage.removeItem('cart'); // Clear cart after checkout
+          window.location.href = 'index.html'; // Redirect to home page
+        } else {
+          alert('Keranjang belanja kamu kosong.');
+        }
+      });
+
+      // Initialize the checkout
+      displayCheckout();
+    });
+  </script>
+
+</body>
+</html>
